@@ -1,0 +1,9 @@
+name: MChallenges
+load: STARTUP
+version: 1.0.0
+main: de.joker.addon.MAddon
+api-version: 1.16
+authors: [ InvalidJokerDE ]
+description: The best MUtils Addon for new Challenges
+softdepend: [ MUtils-Challenge ]
+
