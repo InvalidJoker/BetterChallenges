@@ -1,5 +1,5 @@
 
-rootProject.name = "MChallenges"
+rootProject.name = "BetterChallenges"
 
 pluginManagement {
     repositories {

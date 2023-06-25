@@ -14,7 +14,12 @@ import kotlin.time.toJavaDuration
 
 val prefix = cmp("MChallenges", NamedTextColor.BLUE) + cmp(" >>", NamedTextColor.DARK_GRAY) + cmp(" ")
 
-fun Component.decorate(bold: Boolean? = null, italic: Boolean? = null, strikethrough: Boolean? = null, underlined: Boolean? = null): Component {
+fun Component.decorate(
+    bold: Boolean? = null,
+    italic: Boolean? = null,
+    strikethrough: Boolean? = null,
+    underlined: Boolean? = null
+): Component {
     var finalComponent = this
     if (bold != null) finalComponent = finalComponent.decoration(TextDecoration.BOLD, bold)
     if (italic != null) finalComponent = finalComponent.decoration(TextDecoration.ITALIC, italic)
@@ -31,7 +36,14 @@ fun emptyComponent(): Component {
     return Component.text(" ")
 }
 
-fun cmp(text: String, color: TextColor = NamedTextColor.GRAY, bold: Boolean = false, italic: Boolean = false, strikethrough: Boolean = false, underlined: Boolean = false): Component {
+fun cmp(
+    text: String,
+    color: TextColor = NamedTextColor.GRAY,
+    bold: Boolean = false,
+    italic: Boolean = false,
+    strikethrough: Boolean = false,
+    underlined: Boolean = false
+): Component {
     return Component.text(text).color(color)
         .decorations(
             mapOf(
@@ -62,6 +74,18 @@ operator fun Component.plus(other: Component): Component {
     return append(other)
 }
 
-fun Audience.title(main: Component, sub: Component, fadeIn: Duration = Duration.ZERO, stay: Duration = 5.seconds, fadeOut: Duration = Duration.ZERO) {
-    showTitle(Title.title(main, sub, Title.Times.times(fadeIn.toJavaDuration(), stay.toJavaDuration(), fadeOut.toJavaDuration())))
+fun Audience.title(
+    main: Component,
+    sub: Component,
+    fadeIn: Duration = Duration.ZERO,
+    stay: Duration = 5.seconds,
+    fadeOut: Duration = Duration.ZERO
+) {
+    showTitle(
+        Title.title(
+            main,
+            sub,
+            Title.Times.times(fadeIn.toJavaDuration(), stay.toJavaDuration(), fadeOut.toJavaDuration())
+        )
+    )
 }

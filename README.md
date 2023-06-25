@@ -1,16 +1,15 @@
-# MChallenges
+# BetterChallenges
 An Extension for the [MUtils](https://mutils.net/)
-## Activate the Extension
+## 🟢 Activate the Extension
 Use the `/challenge addons` command and select the MChallenges option.
 
-## Features
+## 🚀 Features
 ### The Extended Randomizers have a few more options than the normal Randomizers:
 - Player Specific Block Randomizer
 - Player Specific Drops Randomizer
-- more soon™️
-
+- more soon™
 ### New Features:
 - Randomize the Player's Inventory
 
-## Download
+## 📥 Download
 You can download the Extension from the [MUtils Addon Page](https://mutils.net/ch/addons) (soon) or from [Modrinth](https://modrinth.com/plugin/mchallenges)

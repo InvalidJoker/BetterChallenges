@@ -41,7 +41,7 @@ tasks {
         dependencies {
             include(dependency("net.axay:kspigot:1.19.2"))
         }
-        archiveFileName.set("MChallenges.jar")
+        archiveFileName.set("BetterChallenges.jar")
     }
     assemble {
         dependsOn(shadowJar)

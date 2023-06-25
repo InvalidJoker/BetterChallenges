@@ -11,7 +11,7 @@ import org.bukkit.entity.Player
 import org.bukkit.event.player.PlayerMoveEvent
 import org.bukkit.event.player.PlayerToggleSneakEvent
 
-class IceFloorChallenge: Challenge {
+class IceFloorChallenge : Challenge {
     private var sneakToggle: Boolean = false
     private var playerModes = mutableMapOf<Player, Boolean>() // player, mode
 

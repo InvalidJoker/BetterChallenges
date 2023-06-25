@@ -6,7 +6,7 @@ import net.axay.kspigot.event.register
 import net.axay.kspigot.event.unregister
 import org.bukkit.event.world.LootGenerateEvent
 
-class NoLootChallenge: Challenge {
+class NoLootChallenge : Challenge {
     override fun register() {
         chestLootGenerate.register()
     }

@@ -1,4 +1,4 @@
-name: MChallenges
+name: BetterChallenges
 load: STARTUP
 version: 1.0.0
 main: de.joker.addon.MAddon

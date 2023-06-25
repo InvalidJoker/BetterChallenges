@@ -1,11 +1,11 @@
 package de.joker.addon
 
-import de.miraculixx.challenge.api.MChallengeAPI
-import de.miraculixx.challenge.api.settings.ChallengeData
 import de.joker.addon.utils.AddonMod
 import de.joker.addon.utils.cmp
 import de.joker.addon.utils.plus
 import de.joker.addon.utils.prefix
+import de.miraculixx.challenge.api.MChallengeAPI
+import de.miraculixx.challenge.api.settings.ChallengeData
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json

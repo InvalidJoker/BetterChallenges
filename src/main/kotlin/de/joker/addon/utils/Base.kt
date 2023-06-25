@@ -5,8 +5,8 @@ import org.bukkit.entity.LivingEntity
 import java.util.*
 
 fun getLivingMobs(natural: Boolean): MutableList<EntityType> {
-    val list = kotlin.collections.ArrayList<EntityType>(Arrays.stream(EntityType.values()).filter {
-            entityType -> entityType.entityClass != null && LivingEntity::class.java.isAssignableFrom(entityType.entityClass)
+    val list = kotlin.collections.ArrayList<EntityType>(Arrays.stream(EntityType.values()).filter { entityType ->
+        entityType.entityClass != null && LivingEntity::class.java.isAssignableFrom(entityType.entityClass)
     }.toList()).toMutableList()
     list.remove(EntityType.PLAYER)
     if (natural) {

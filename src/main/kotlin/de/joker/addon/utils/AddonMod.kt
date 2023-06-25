@@ -1,17 +1,18 @@
 package de.joker.addon.utils
 
 import de.joker.addon.AddonManager
-import de.miraculixx.challenge.api.modules.challenges.ChallengeTags
-import de.miraculixx.challenge.api.modules.challenges.CustomChallengeData
-import de.miraculixx.challenge.api.settings.ChallengeBoolSetting
-import de.miraculixx.challenge.api.settings.ChallengeData
-import de.miraculixx.challenge.api.utils.Icon
-import de.miraculixx.challenge.api.utils.IconNaming
 import de.joker.addon.MAddon
 import de.joker.addon.mods.challenges.IceFloorChallenge
 import de.joker.addon.mods.challenges.NoLootChallenge
 import de.joker.addon.mods.randomizer.BlockRandomizer
 import de.joker.addon.mods.randomizer.DropsRandomizer
+import de.miraculixx.challenge.api.modules.challenges.ChallengeTags
+import de.miraculixx.challenge.api.modules.challenges.CustomChallengeData
+import de.miraculixx.challenge.api.settings.ChallengeBoolSetting
+import de.miraculixx.challenge.api.settings.ChallengeData
+import de.miraculixx.challenge.api.settings.ChallengeEnumSetting
+import de.miraculixx.challenge.api.utils.Icon
+import de.miraculixx.challenge.api.utils.IconNaming
 import java.util.*
 
 /**
@@ -34,18 +35,32 @@ enum class AddonMod(val uuid: UUID) {
                 uuid,
                 BlockRandomizer(),
                 AddonManager.getSettings(this),
-                Icon("GRASS_BLOCK", naming = IconNaming(cmp("Block Randomizer"), listOf(cmp("An advanced Block Randomizer"), cmp("interactions")))),
+                Icon(
+                    "GRASS_BLOCK",
+                    naming = IconNaming(
+                        cmp("Block Randomizer"),
+                        listOf(cmp("An advanced Block Randomizer"), cmp("interactions"))
+                    )
+                ),
                 setOf(ChallengeTags.RANDOMIZER),
                 MAddon.addonName
             )
+
             DROPS_RANDOMIZER_EXTENDED -> CustomChallengeData(
                 uuid,
                 DropsRandomizer(),
                 AddonManager.getSettings(this),
-                Icon("ENDER_CHEST", naming = IconNaming(cmp("Drop Randomizer"), listOf(cmp("An advanced Drop Randomizer"), cmp("interactions")))),
+                Icon(
+                    "ENDER_CHEST",
+                    naming = IconNaming(
+                        cmp("Drop Randomizer"),
+                        listOf(cmp("An advanced Drop Randomizer"), cmp("interactions"))
+                    )
+                ),
                 setOf(ChallengeTags.RANDOMIZER),
                 MAddon.addonName
             )
+
             ICE_FLOOR_CHALLENGE -> CustomChallengeData(
                 uuid,
                 IceFloorChallenge(),
@@ -54,6 +69,7 @@ enum class AddonMod(val uuid: UUID) {
                 setOf(ChallengeTags.FUN),
                 MAddon.addonName
             )
+
             NO_LOOT_CHALLENGE -> CustomChallengeData(
                 uuid,
                 NoLootChallenge(),
@@ -73,15 +89,16 @@ enum class AddonMod(val uuid: UUID) {
     fun getDefaultSetting(): ChallengeData {
         return when (this) {
             BLOCK_RANDOMIZER_EXTENDED -> ChallengeData(
-                    mapOf(
-                        "random" to ChallengeBoolSetting("DIAMOND_PICKAXE", false),
-                        "player" to ChallengeBoolSetting("REDSTONE", false),
-                    ),
-                    mapOf(
-                        "random" to IconNaming(cmp("Full Random"), listOf(cmp("Randomizes all blocks"))),
-                        "player" to IconNaming(cmp("Per Player"), listOf(cmp("Randomizes all blocks per player"))),
-                    ),
-                )
+                mapOf(
+                    "random" to ChallengeBoolSetting("DIAMOND_PICKAXE", false),
+                    "player" to ChallengeBoolSetting("REDSTONE", false),
+                ),
+                mapOf(
+                    "random" to IconNaming(cmp("Full Random"), listOf(cmp("Randomizes all blocks"))),
+                    "player" to IconNaming(cmp("Per Player"), listOf(cmp("Randomizes all blocks per player"))),
+                ),
+            )
+
             DROPS_RANDOMIZER_EXTENDED -> ChallengeData(
                 mapOf(
                     "random" to ChallengeBoolSetting("DIAMOND_PICKAXE", false),
@@ -92,6 +109,7 @@ enum class AddonMod(val uuid: UUID) {
                     "player" to IconNaming(cmp("Per Player"), listOf(cmp("Randomizes all drops per player"))),
                 ),
             )
+
             ICE_FLOOR_CHALLENGE -> ChallengeData(
                 mapOf(
                     "sneak" to ChallengeBoolSetting("REDSTONE_COMPARATOR", true),
@@ -100,6 +118,7 @@ enum class AddonMod(val uuid: UUID) {
                     "sneak" to IconNaming(cmp("Sneak"), listOf(cmp("Toggle the challenge by sneaking"))),
                 ),
             )
+
             else -> ChallengeData(mapOf(), mapOf())
         }
     }
